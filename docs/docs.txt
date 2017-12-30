@@ -1,0 +1,18 @@
+** Subsidiary ledger accounts (detailed accounts under control accounts) **
+1. Accounts payable ledger
+2. Accounts receivable ledger
+3. Fixed assets ledger
+4. Inventory ledger
+5. Purchases ledger
+
+** Special Journals **
+Sales journal (on credit)
+* Date, Customer, Accounts Receivable Ledger Reference, Sales Invoice Number, Invoice Amount, Sales Type (Sales Tax, Delivery Charges, etc), other
+sales returns journal
+Cash receipts journal (cash payments received)
+* Date, Receipt Number, Customer, Check Number, Description, Amount, Discount Allowed, Cash Receipt Type (accounts receivable, fixed asset sales, etc), Other
+Purchases Journal (on credit)
+* Date, Supplier, Accounts Payable Ledger Reference, Invoice Number, Invoice Amount, Purchases Type (Inventory, Supplies, Equipment, etc), Other
+purchase returns journal
+Cash Payments/Disbursements Journal (cash payments made)
+* Date, Description, Check Number, Amount, Cash Payment Type (Accounts Payable, Cash Purchases, Taxes, etc.), Other
