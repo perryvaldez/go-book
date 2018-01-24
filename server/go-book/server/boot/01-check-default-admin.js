@@ -11,13 +11,29 @@ module.exports = async (app) => {
 
   console.log('=== BEGIN check-default-admin ===');
   
-  const AppUser = app.models.AppUser;
+  const { AppUser, Role, RoleMapping } = app.models;
 
   let user = await AppUser.findOne({ where: { id: 1 } });
   if (!user) {
-    console.log('No built-in admin user found, creating...');
+    console.log('No built-in admin user found.');
+
+    console.log('* Creating super admin...');
     user = await AppUser.create({ email: 'admin@example.com', password: 'password' }); 
-    console.log('User has been created successfully: ', user);
+
+    console.log('* Creating super admin role...');
+    const role = await Role.create({ name: 'superadmin' });
+
+    console.log('* Creating role principal...');
+    const principal = await role.principals.create({
+      principalType: RoleMapping.USER,
+      principalId: user.id,
+    });
+
+    console.log('Default admin created successfully: ');
+    console.log('* user: ', user);
+    console.log('* role: ', role);
+    console.log('* principal: ', principal);
+
   } else {
     console.log('Built-in admin user found, using the admin user: ', user);
   }
