@@ -14,30 +14,30 @@
     ]
   },
   "User": {
-    "dataSource": "db",
+    "dataSource": "pg",
     "public": false
   },
   "AccessToken": {
-    "dataSource": "db",
+    "dataSource": "pg",
     "public": false
   },
   "ACL": {
-    "dataSource": "db",
+    "dataSource": "pg",
     "public": false
   },
   "RoleMapping": {
-    "dataSource": "db",
+    "dataSource": "pg",
     "public": false,
     "options": {
       "strictObjectIDCoercion": true
     }
   },
   "Role": {
-    "dataSource": "db",
+    "dataSource": "pg",
     "public": false
   },
   "AppUser": {
-    "dataSource": "db",
+    "dataSource": "pg",
     "public": true
   }
 }

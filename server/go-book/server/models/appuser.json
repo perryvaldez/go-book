@@ -3,9 +3,65 @@
   "base": "User",
   "idInjection": true,
   "options": {
-    "validateUpsert": true
+    "validateUpsert": true,
+    "postgresql": {
+      "table": "tbl_users"
+    }
   },
-  "properties": {},
+  "properties": {
+    "id": {
+      "type": "Number",
+      "required": true,
+      "postgresql": {
+        "columnName": "id",
+        "dataType": "INT",
+	"nullable": "N"
+      }
+    },
+    "email": {
+      "type": "String",
+      "required": true,
+      "length": 255,
+      "index": { "unique": true },
+      "postgresql": {
+        "columnName": "email",
+        "dataType": "VARCHAR",
+	"dataLength": 255,
+	"nullable": "N"
+      }
+    },
+    "password": {
+      "type": "String",
+      "required": true,
+      "length": 255,
+      "postgresql": {
+        "columnName": "password",
+        "dataType": "VARCHAR",
+	"dataLength": 255,
+	"nullable": "N"
+      }
+    },
+    "realm": {
+      "type": "String",
+      "required": false,
+      "postgresql": {
+        "columnName": "realm",
+        "dataType": "VARCHAR",
+	"dataLength": 30,
+	"nullable": "Y"
+      }
+    },
+    "username": {
+      "type": "String",
+      "required": false,
+      "postgresql": {
+        "columnName": "username",
+        "dataType": "VARCHAR",
+	"dataLength": 30,
+	"nullable": "Y"
+      }
+    }
+  },
   "validations": [],
   "relations": {},
   "acls": [

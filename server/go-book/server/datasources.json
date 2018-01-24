@@ -2,5 +2,15 @@
   "db": {
     "name": "db",
     "connector": "memory"
+  },
+  "pg": {
+    "host": "localhost",
+    "port": 5432,
+    "url": "",
+    "database": "test_gobook",
+    "password": "password",
+    "name": "pg",
+    "user": "db_admin",
+    "connector": "postgresql"
   }
 }
