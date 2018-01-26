@@ -39,5 +39,37 @@
   "AppUser": {
     "dataSource": "pg",
     "public": true
+  },
+  "Business": {
+    "dataSource": "pg",
+    "public": true
+  },
+  "UserBusinessMapping": {
+    "dataSource": "pg",
+    "public": true
+  },
+  "Account": {
+    "dataSource": "pg",
+    "public": true
+  },
+  "ParentAccount": {
+    "dataSource": "pg",
+    "public": true
+  },
+  "FiscalYear": {
+    "dataSource": "pg",
+    "public": true
+  },
+  "AccountingPeriod": {
+    "dataSource": "pg",
+    "public": true
+  },
+  "JournalEntry": {
+    "dataSource": "pg",
+    "public": true
+  },
+  "JournalEntryDetail": {
+    "dataSource": "pg",
+    "public": true
   }
 }

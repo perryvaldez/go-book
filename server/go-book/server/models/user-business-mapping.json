@@ -1,0 +1,53 @@
+{
+  "name": "UserBusinessMapping",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true,
+    "postgresql": {
+      "table": "tbl_userbiz_map"
+    }
+  },
+  "indexes:": {
+    "user_biz_index": {
+      "keys": {
+        "userId": 1,
+        "businessId": 1
+      },
+      "options": {
+        "unique": true
+      }
+    }
+  },
+  "properties": {
+    "userId": {
+      "type": "number",
+      "required": true,
+      "postgresql": {
+        "columnName": "user_id",
+        "dataType": "INT",
+        "nullable": "N"
+      }
+    },
+    "businessId": {
+      "type": "number",
+      "required": true,
+      "postgresql": {
+        "columnName": "biz_id",
+        "dataType": "INT",
+        "nullable": "N"
+      }
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "superadmin",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}

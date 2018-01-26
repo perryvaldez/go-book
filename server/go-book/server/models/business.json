@@ -1,0 +1,38 @@
+{
+  "name": "Business",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true,
+    "postgresql": {
+      "table": "tbl_businesses"
+    }
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "index": {
+        "unique": true
+      },
+      "length": 50,
+      "postgresql": {
+        "columnName": "name",
+        "dataType": "VARCHAR",
+        "dataLength": 50,
+        "nullable": "N"
+      }
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "superadmin",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}

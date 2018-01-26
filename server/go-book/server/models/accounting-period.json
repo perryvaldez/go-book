@@ -1,0 +1,72 @@
+{
+  "name": "AccountingPeriod",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true,
+    "postgresql": {
+      "table": "tbl_acct_periods"
+    }
+  },
+  "properties": {
+    "fiscalYearId": {
+      "type": "number",
+      "required": true,
+      "postgresql": {
+        "columnName": "fiscal_year_id",
+        "dataType": "INT",
+        "nullable": "N"
+      }
+    },
+    "name": {
+      "type": "string",
+      "required": true,
+      "length": 20,
+      "postgresql": {
+        "columnName": "name",
+        "dataType": "VARCHAR",
+        "dataLength": 20,
+        "nullable": "N"
+      }
+    },
+    "dateStart": {
+      "type": "date",
+      "required": true,
+      "postgresql": {
+        "columnName": "date_start",
+        "dataType": "DATE",
+        "nullable": "N"
+      }
+    },
+    "dateEnd": {
+      "type": "date",
+      "required": true,
+      "postgresql": {
+        "columnName": "date_end",
+        "dataType": "DATE",
+        "nullable": "N"
+      }
+    },
+    "closed": {
+      "type": "boolean",
+      "required": true,
+      "default": false,
+      "postgresql": {
+        "columnName": "closed",
+        "dataType": "BOOLEAN",
+        "nullable": "N"
+      }
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "superadmin",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}

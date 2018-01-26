@@ -1,0 +1,61 @@
+{
+  "name": "Account",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true,
+    "postgresql": {
+      "table": "tbl_accounts"
+    }
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "index": {
+        "unique": true
+      },
+      "length": 50,
+      "postgresql": {
+        "columnName": "name",
+        "dataType": "VARCHAR",
+        "dataLength": 50,
+        "nullable": "N"
+      }
+    },
+    "code": {
+      "type": "string",
+      "required": true,
+      "index": {
+        "unique": true
+      },
+      "length": 20,
+      "postgresql": {
+        "columnName": "code",
+        "dataType": "VARCHAR",
+        "dataLength": 20,
+        "nullable": "N"
+      }
+    },
+    "businessId": {
+      "type": "number",
+      "required": true,
+      "postgresql": {
+        "columnName": "biz_id",
+        "dataType": "INT",
+        "nullable": "N"
+      }
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "superadmin",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}

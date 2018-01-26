@@ -1,0 +1,33 @@
+{
+  "name": "ParentAccount",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true,
+    "postgresql": {
+      "table": "tbl_parent_accounts"
+    }
+  },
+  "properties": {
+    "parentAccountId": {
+      "type": "number",
+      "required": true,
+      "postgresql": {
+        "columnName": "parent_acct_id",
+        "dataType": "INT",
+        "nullable": "N"
+      }
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "superadmin",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}

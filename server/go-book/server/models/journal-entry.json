@@ -1,0 +1,53 @@
+{
+  "name": "JournalEntry",
+  "plural": "JournalEntries",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true,
+    "postgresql": {
+      "table": "tbl_journal_entries"
+    }
+  },
+  "properties": {
+    "accountingPeriodId": {
+      "type": "number",
+      "required": true,
+      "postgresql": {
+        "columnName": "acct_period_id",
+        "dataType": "INT",
+        "nullable": "N"
+      }
+    },
+    "transactionDate": {
+      "type": "date",
+      "postgresql": {
+        "columnName": "tran_date",
+        "dataType": "DATE",
+        "nullable": "N"
+      }
+    },
+    "description": {
+      "type": "string",
+      "required": true,
+      "length": 50,
+      "postgresql": {
+        "columnName": "description",
+        "dataType": "VARCHAR",
+        "dataLength": 50,
+        "nullable": "N"
+      }
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "superadmin",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}

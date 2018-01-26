@@ -1,0 +1,71 @@
+{
+  "name": "FiscalYear",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true,
+    "postgresql": {
+      "table": "tbl_fiscal_years"
+    }
+  },
+  "properties": {
+    "businessId": {
+      "type": "number",
+      "required": true,
+      "postgresql": {
+        "columnName": "biz_id",
+        "dataType": "INT",
+        "nullable": "N"
+      }
+    },
+    "year": {
+      "type": "number",
+      "required": true,
+      "postgresql": {
+        "columnName": "year",
+        "dataType": "INT",
+        "nullable": "N"
+      }
+    },
+    "name": {
+      "type": "string",
+      "required": true,
+      "length": 20,
+      "postgresql": {
+        "columnName": "name",
+        "dataType": "VARCHAR",
+        "dataLength": 20,
+        "nullable": "N"
+      }
+    },
+    "dateStart": {
+      "type": "date",
+      "required": true,
+      "postgresql": {
+        "columnName": "date_start",
+        "dataType": "DATE",
+        "nullable": "N"
+      }
+    },
+    "dateEnd": {
+      "type": "date",
+      "required": true,
+      "postgresql": {
+        "columnName": "date_end",
+        "dataType": "DATE",
+        "nullable": "N"
+      }
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "superadmin",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}
